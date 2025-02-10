@@ -11,7 +11,7 @@
 
 
 ## Структура проекта
-
+```
 monitoring_project/
 
 ├── bin/
@@ -24,38 +24,45 @@ monitoring_project/
     └── test-monitor.timer # Таймер systemd для периодического запуска
     
 └── README.md # Инструкции по установке
-
+```
 
 ## Установка
 
 ### 1. Установка скрипта мониторинга
 
 1. Скопируйте скрипт `monitor_test.sh` в директорию `/usr/local/bin`:
-   ```bash
+   ```
    sudo cp bin/monitor_test.sh /usr/local/bin/monitor_test.sh
+   ```
 
 2. Сделайте скрипт исполняемым:
-   ```bash
+   ```
    sudo chmod +x /usr/local/bin/monitor_test.sh
+   ```
 
 ### 2. Установка unit-файлов systemd
 
 1. Скопируйте файлы test-monitor.service и test-monitor.timer в директорию /etc/systemd/system:
+   ```
    sudo cp systemd/test-monitor.service /etc/systemd/system/test-monitor.service
    sudo cp systemd/test-monitor.timer /etc/systemd/system/test-monitor.timer
-
+   ```
 
 2. Перезагрузите конфигурацию systemd:
+   ```
    sudo systemctl daemon-reload
+   ```
 
 3. Включите и запустите таймер:
+   ```
    sudo systemctl enable test-monitor.timer
    sudo systemctl start test-monitor.timer
-
-
+   ```
 
 4. Проверьте статус таймера:
+   ```
    sudo systemctl status test-monitor.timer
+   ```
 
 
 ## Логирование
