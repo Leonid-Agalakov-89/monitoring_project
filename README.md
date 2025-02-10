@@ -15,11 +15,14 @@
 monitoring_project/
 
 ├── bin/
-    │ └── monitor_test.sh # Скрипт мониторинга
+    │
+    └── monitor_test.sh # Скрипт мониторинга
 
-├── systemd/ │
+├── systemd/
+    │
     ├── test-monitor.service # Unit-файл systemd для сервиса
     └── test-monitor.timer # Таймер systemd для периодического запуска
+    
 └── README.md # Инструкции по установке
 
 
